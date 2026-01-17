@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>古川工務店 | 三重県津市安濃町のコンクリート・補修専門</title>
 
@@ -363,6 +362,11 @@
             line-height: 1;
         }
 
+        /* スマホ専用改行（PC時は非表示） */
+        .sp-br {
+            display: none;
+        }
+
         /* --- レスポンシブ調整 --- */
         @media (max-width: 768px) {
             .section {
@@ -389,6 +393,11 @@
             /* スマホではバナーの高さを少し調整 */
             .fixed-call-banner {
                 min-height: 90px;
+            }
+
+            /* スマホ専用改行 */
+            .sp-br {
+                display: block;
             }
         }
     </style>
@@ -425,9 +434,14 @@
             <div class="container">
                 <p class="concept-lead">誠実な対応と、確かな技術力。<br>あなたの「理想」に寄り添う工務店です。</p>
                 <div class="concept-text">
-                    <p>古川工務店では、三重県津市安濃町を中心に、地域に根ざした丁寧な仕事を行っています。コンクリート打設やタイル貼りといった専門技術を軸に、住まいの補修やお庭の工事まで幅広く対応いたします。</p>
+                    <p>古川工務店では、<span class="sp-br"></span>三重県津市安濃町を中心に、<span class="sp-br"></span>地域に根ざした丁寧な仕事を<span
+                            class="sp-br"></span>行っています。<span class="sp-br"></span>コンクリート打設やタイル貼りといった<span
+                            class="sp-br"></span>専門技術を軸に、住まいの補修や<span class="sp-br"></span>お庭の工事まで幅広く対応いたします。</p>
                     <p style="margin-top: 20px;">
-                        私たちは「顔の見えるお付き合い」を大切にしています。事務所では2匹の看板犬とともに、アットホームな雰囲気でお客様をお迎えしています。どんな些細なことでも、まずはお気軽にご相談ください。</p>
+                        私たちは<span class="sp-br"></span>「顔の見えるお付き合い」を<span class="sp-br"></span>大切にしています。<span
+                            class="sp-br"></span>事務所では2匹の看板犬とともに、<span class="sp-br"></span>アットホームな雰囲気で<span
+                            class="sp-br"></span>お客様をお迎えしています。<span class="sp-br"></span>どんな些細なことでも、<span
+                            class="sp-br"></span>まずはお気軽にご相談ください。</p>
                 </div>
 
                 <div class="commitment-circles">
