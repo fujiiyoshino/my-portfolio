@@ -8,7 +8,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
 
     <style>
         /* --- 基本設定 --- */
@@ -72,29 +73,49 @@
         }
 
         h1 img {
-            max-width: 90%;
-            width: 500px;
+            max-width: 95%;
+            width: 700px;
             height: auto;
             opacity: 0;
             animation: fadeInUp 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
         }
 
+        nav {
+            margin-top: 25px;
+            padding: 0 10px;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px 30px;
-            margin-top: 20px;
+            justify-content: stretch;
+            flex-wrap: nowrap;
+            gap: 0;
+            margin: 0;
             opacity: 0;
             animation: fadeInUp 1.5s ease-out 0.8s forwards;
+            width: 100%;
+        }
+
+        nav ul li {
+            flex: 1;
+            text-align: center;
         }
 
         nav ul li a {
+            display: block;
             text-decoration: none;
             color: #1a2a3a;
-            font-weight: bold;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 18px 10px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4a6fa5;
+            border-bottom-color: #1a2a3a;
         }
 
         /* --- メインビジュアル --- */
@@ -123,18 +144,21 @@
         }
 
         .concept-lead {
-            font-size: clamp(1.2rem, 4vw, 1.8rem);
-            font-weight: 700;
+            font-size: clamp(1.4rem, 5vw, 2.2rem);
+            font-weight: 900;
             color: #1a2a3a;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             text-align: center;
-            line-height: 1.5;
+            line-height: 1.6;
+            letter-spacing: 0.02em;
         }
 
         .concept-text {
             max-width: 850px;
             margin: 0 auto 60px;
             text-align: justify;
+            line-height: 1.9;
+            font-size: 1rem;
         }
 
         /* 3つのサークルレイアウト */
@@ -188,11 +212,13 @@
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 900;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 55px;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 18px;
+            letter-spacing: 0.08em;
         }
 
         .section-title::after {
@@ -217,6 +243,19 @@
             padding: 40px 30px;
             border-top: 5px solid #1a2a3a;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-item h4 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1a2a3a;
+            margin-bottom: 15px;
+            letter-spacing: 0.02em;
+        }
+
+        .service-item p {
+            line-height: 1.8;
+            color: #555;
         }
 
         /* --- ギャラリー（ライトボックス） --- */
