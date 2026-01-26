@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="「伝える」をあきらめない。Webクリエイターのたまご。丁寧なヒアリングで、想いを正しく翻訳します。">
+    <title>藤井 | WEB Creator - Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ========================================
+         PROFILE PANEL (TOP LEFT)
+    ======================================== -->
+    <div class="profile-toggle">
+        <button id="about-btn" class="about-btn">
+            <img src="images/logo.png" alt="About" class="about-logo">
+            <span class="click-hint">Click Model !</span>
+        </button>
+    </div>
+
+    <div id="profile-panel" class="profile-panel">
+        <div class="profile-inner">
+            <button id="close-btn" class="close-btn">CLOSE</button>
+            <div class="profile-content">
+                <p class="profile-label">PROFILE</p>
+                <h1 class="profile-name">藤井 慶乃<span class="en-name">Yoshino Fujii</span></h1>
+                <p class="profile-title">WEBcreator</p>
+                <p class="profile-location">三重在住</p>
+                <div class="profile-links">
+                    <a href="https://x.com/fujii_web" target="_blank">X</a> /
+                    <a href="https://www.instagram.com/fujii.web?igsh=dmdmaWMwM291ZHNy&utm_source=qr"
+                        target="_blank">instagram</a> /
+                    <a href="https://note.com/fuijiiyoshino" target="_blank">note</a>
+                </div>
+                <p class="profile-note">※お仕事依頼・ご相談はDMにてお願いいたします。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         MAIN SCROLL CONTENT
+    ======================================== -->
+    <main class="main-content">
+        <div class="image-scroll-container">
+            <!-- Image 01: FUJII DOGS -->
+            <article class="image-item" data-category="web">
+                <div class="image-wrapper">
+                    <img src="images/image01.png" alt="FUJII DOGS">
+                </div>
+                <div class="image-info">
+                    <p class="image-category">WEB</p>
+                    <a href="https://fujiiyoshino.github.io/petshop_page/" target="_blank" class="image-link">FUJII
+                        DOGS</a>
+                </div>
+            </article>
+
+            <!-- Image 02: KUZIRA CAFE -->
+            <article class="image-item" data-category="web">
+                <div class="image-wrapper">
+                    <img src="images/image02.png" alt="KUZIRA CAFE">
+                </div>
+                <div class="image-info">
+                    <p class="image-category">WEB</p>
+                    <a href="https://fujiiyoshino.github.io/kuziracafe_page/" target="_blank" class="image-link">KUZIRA
+                        CAFE</a>
+                </div>
+            </article>
+
+            <!-- Image 03: shining jewel -->
+            <article class="image-item" data-category="web">
+                <div class="image-wrapper">
+                    <img src="images/image03.png" alt="shining jewel">
+                </div>
+                <div class="image-info">
+                    <p class="image-category">WEB</p>
+                    <a href="https://fujiiyoshino.github.io/shiningjewel_page/" target="_blank"
+                        class="image-link">shining jewel</a>
+                </div>
+            </article>
+
+            <!-- Image 04: FURUKAWA koumutenn -->
+            <article class="image-item" data-category="web">
+                <div class="image-wrapper">
+                    <img src="images/image04.png" alt="FURUKAWA koumutenn">
+                </div>
+                <div class="image-info">
+                    <p class="image-category">WEB</p>
+                    <a href="https://fujiiyoshino.github.io/koumuten_page/" target="_blank" class="image-link">FURUKAWA
+                        koumutenn</a>
+                </div>
+            </article>
+
+            <!-- Image 05: digital meishi kirari -->
+            <article class="image-item" data-category="namecard">
+                <div class="image-wrapper">
+                    <img src="images/image05.png" alt="digital meishi kirari">
+                </div>
+                <div class="image-info">
+                    <p class="image-category">Namecard</p>
+                    <a href="https://fujiiyoshino.github.io/kirari/" target="_blank" class="image-link">digital meishi
+                        kirari</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- ========================================
+         NAVIGATION (BOTTOM LEFT)
+    ======================================== -->
+    <nav class="bottom-nav">
+        <ul class="nav-list">
+            <li><button class="nav-item active" data-filter="all">ALL</button></li>
+            <!-- Future categories can be added here -->
+        </ul>
+    </nav>
+
+    <!-- Scripts -->
+    <script>
+        // Profile Toggle
+        const aboutBtn = document.getElementById('about-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const profilePanel = document.getElementById('profile-panel');
+
+        aboutBtn.addEventListener('click', () => {
+            profilePanel.classList.add('is-open');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            profilePanel.classList.remove('is-open');
+        });
+
+        // Navigation Filter (Currently just resets to top for ALL)
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                const filter = e.target.dataset.filter;
+
+                // Update active state
+                navItems.forEach(nav => nav.classList.remove('active'));
+                e.target.classList.add('active');
+
+                if (filter === 'all') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            })
+        })
+
+        // Scroll animation (Re-added)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.image-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+
+</html>
